@@ -8,3 +8,4 @@ gem "pry"
 gem "require_all"
 gem 'tty-font'
 gem 'pastel'
+gem 'tty-prompt'

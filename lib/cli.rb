@@ -47,8 +47,8 @@ def create_profile
     puts 'What\'s your name?'
     name = gets.chomp
     new_user = User.create(name: name )
-    puts "Thanks for joining Game app"
-    puts new_user
+    puts "Thanks for joining Game app!"
+    puts new_user.name
     # binding.pry
     #okay what next?
 end 
@@ -57,14 +57,23 @@ def view_profile
     puts 'Who\'s profile are you looking for?'
     name = gets.chomp
     user = User.all.find_by(name: name)
-    puts "list of systems:"
-    user.systems.map do |system|
-        puts "system name: #{system.name}"
-    end
-        # puts user.games.uniq
-    # puts 
-    # puts find_user.reviews
-    # binding.pry
+        puts "list of your systems:"
+        # binding.pry
+            user.systems.uniq.map do |system|
+            puts "system name: #{system.name}"
+        end
+        puts
+        puts 'list of your game titles:'
+        user.games.map do |game|
+            puts "game title: #{game.title}"
+            # binding.pry
+        end 
+        puts  
+        puts 'list of your reviews:'
+        user.reviews.each do |review|
+            puts "Your review: #{review.review}"
+            # binding.pry
+        end 
 end
 
 def edit_profile 
