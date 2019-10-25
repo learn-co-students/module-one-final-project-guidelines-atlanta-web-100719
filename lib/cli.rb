@@ -2,6 +2,10 @@ font = TTY::Font.new(:doom)
 pastel = Pastel.new
 puts pastel.green(font.write("GAMERTAB"))
 
+# require "tty-prompt"
+
+# prompt = TTY::Prompt.new
+
 def greet 
     puts 'Welcome to Gamertab! A simple way to keep tabs on all your gaming ambitions!'
     puts 
@@ -9,6 +13,7 @@ def greet
 end 
 
 def main_menu 
+    # prompt.select("What can we help you keep tabs on?", %w('1','2','3','4','5','6',))
     puts 'What can we help you keep tabs on?'
     puts '----------------------------------'
     puts '1. Create a player profile'
